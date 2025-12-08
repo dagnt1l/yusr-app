@@ -1,0 +1,69 @@
+html {
+    @apply font-body;
+}
+
+body {
+    @apply bg-gray-50;
+}
+
+button,
+.button {
+    @apply inline-flex cursor-pointer gap-2 rounded-lg px-3 py-2 font-medium transition-all select-none [&_svg]:size-5;
+}
+
+button.primary,
+.button.primary {
+    @apply bg-green-700 text-white hover:bg-green-800 focus:ring-4 focus:ring-green-500/20;
+}
+
+.navbar {
+    @apply container flex flex-col justify-between gap-4 bg-white py-4 lg:flex-row lg:items-center lg:gap-0;
+}
+
+.navbar-title {
+    @apply text-xl font-medium text-green-700 hover:text-green-800;
+}
+
+.navbar-link {
+    @apply text-black/70 transition-colors hover:text-black;
+}
+
+.hero {
+    @apply relative z-10 container grid h-screen items-end bg-cover bg-center bg-no-repeat p-8 text-white lg:p-16;
+}
+
+.hero::after {
+    @apply absolute inset-0 -z-10 h-full w-full bg-black/50 content-[''];
+}
+
+.form-input {
+    @apply rounded-lg border-0 bg-gray-100 px-3 py-2.5 transition-all outline-none placeholder:text-gray-500 focus:ring-4 focus:ring-green-500/20 disabled:opacity-80;
+}
+
+.card {
+    @apply mx-auto w-full overflow-hidden rounded-lg bg-white shadow-2xl;
+}
+
+.card-content {
+    @apply p-5;
+}
+
+.card-title {
+    @apply text-lg font-medium;
+}
+
+.card-text {
+    @apply text-sm text-gray-500;
+}
+
+.alert {
+    @apply fixed end-4 bottom-4 z-50 w-96 rounded-lg bg-white p-5 shadow-lg/5;
+}
+
+@utility icon-container {
+    @apply relative inline-block rounded-xl bg-white p-3 text-green-700 shadow [&_svg]:size-8;
+}
+
+@utility container {
+    @apply w-full max-w-[unset] px-8 lg:px-16;
+}
