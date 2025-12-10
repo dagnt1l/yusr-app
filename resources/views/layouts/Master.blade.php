@@ -13,7 +13,7 @@
         @endif
         <title>{{ config('app.name') }} - @yield('page_title')</title>
     </head>
-    <body>
+    <body class="bg-size-[400px] bg-fixed" style="background-image: url({{ asset('images/pattern-bg.jpg') }})">
         {{-- Alerts --}}
         @include('components.Alerts')
         {{-- Alerts --}}
@@ -26,9 +26,10 @@
             <div class="flex gap-4 *:transition-colors">
                 <a href="{{ route('/') }}" class="navbar-link">الرئيسىة</a>
                 @guest
-                    <a href="{{ route('register.view') }}" class="navbar-link">انشاء حساب جديد</a>
+                    {{-- <a href="{{ route('register.view') }}" class="navbar-link">انشاء حساب جديد</a> --}}
                     <a href="{{ route('login.view') }}" class="navbar-link">تسجيل الدخول</a>
                 @endguest
+
                 @auth
                     <a href="{{ route('logout') }}" class="navbar-link">تسجيل الخروج</a>
                 @endauth
@@ -39,6 +40,32 @@
         {{-- Main content --}}
         @yield('page_content')
         {{-- Main content --}}
+
+        {{-- Footer --}}
+        <footer class="bg-primary text-primary-foreground mt-20 py-12">
+            <div class="container grid grid-cols-1 gap-8 md:grid-cols-4">
+                <div class="col-span-1 md:col-span-2">
+                    <h2 class="font-heading mb-4 flex items-center gap-2 text-2xl font-bold">
+                        {{ config('app.name') }}
+                    </h2>
+                    <p class="text-primary-foreground/80 max-w-md leading-relaxed">منصة حكومية رقمية تهدف إلى تيسير الزواج وتخفيف الأعباء المالية من خلال توفير قاعات أفراح حكومية مجهزة للمستحقين.</p>
+                </div>
+                <div>
+                    <p class="font-heading mb-4 text-lg font-bold">روابط سريعة</p>
+                    <a href="#" class="text-primary-foreground/80 block cursor-pointer transition-colors hover:text-white">الرئيسية</a>
+                    <a href="{{ route('about-us') }}" class="text-primary-foreground/80 block cursor-pointer transition-colors hover:text-white">عن المنصة</a>
+                    <a href="#" class="text-primary-foreground/80 block cursor-pointer transition-colors hover:text-white">سياسة الخصوصية</a>
+                </div>
+                <div>
+                    <p class="font-heading mb-4 text-lg font-bold">تواصل معنا</p>
+                    <p class="text-primary-foreground/80 block cursor-pointer transition-colors hover:text-white">الرياض، المملكة العربية السعودية</p>
+                    <p class="text-primary-foreground/80 block cursor-pointer transition-colors hover:text-white">info@yusr.gov.sa</p>
+                    <p class="text-primary-foreground/80 block cursor-pointer transition-colors hover:text-white">920000000</p>
+                </div>
+            </div>
+            <p class="text-primary-foreground/60 container mt-12 border-t border-white/10 pt-8 text-center text-sm">جميع الحقوق محفوظة © منصة يُسر 2025</p>
+        </footer>
+        {{-- Footer --}}
 
         {{-- Scripts --}}
         @stack('scripts')

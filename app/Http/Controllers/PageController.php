@@ -25,10 +25,10 @@ class PageController extends Controller
 
     }
 
-    public function checkView($contractSerial)
+    public function aboutUsView()
     {
 
-        return view('contracts.check');
+        return view('about-us');
 
     }
     

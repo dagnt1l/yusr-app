@@ -3,130 +3,123 @@
 @section('page_title', 'الرئيسية')
 
 @section('page_content')
-    <section class="hero" style="background-image: url({{ asset('images/hero.jpg') }})">
-        <div class="space-y-8">
-            <div class="space-y-6 *:block">
-                <h1 class="text-3xl font-medium lg:text-4xl">منصة رقمية في حجز و إدارة القاعات الحكومية</h1>
-                <p class="text-white/70">منصة رقمية في حجز و إدارة القاعات الحكومية</p>
-            </div>
-            @guest
-                <a href="{{ route('login.view') }}" class="button bg-white text-black hover:bg-gray-100">احجز قاعتك</a>
-            @endguest
-        </div>
-    </section>
-
-    <section class="container space-y-12 py-20">
-        <div class="space-y-4 text-center">
-            <h1 class="text-4xl font-medium">
-                كيف
-                <span class="text-green-700">تحجز؟</span>
+    <section class="hero" style="background-image: url({{ asset('images/hero-hall.jpg') }})">
+        <span class="from-primary/90 via-primary/70 absolute inset-0 -z-10 bg-linear-to-r to-transparent mix-blend-multiply"></span>
+        <div class="text-white">
+            <h1 class="text-5xl leading-tight font-bold lg:text-7xl">
+                بداية حياة كريمة
+                <span class="text-secondary">بكل يُسر</span>
             </h1>
-        </div>
-        <div class="relative grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4">
-            <hr class="absolute top-[calc(2/4*40%)] left-2/4 -z-10 hidden w-[80%] -translate-2/4 border-gray-950/10 lg:inline-block" />
-            <div class="text-center">
-                <span class="icon-container">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" color="currentColor" fill="none">
-                        <path
-                            d="M20.2501 7.75C20.2501 6.28626 20.2289 5.8202 19.9132 5.31054C19.5882 4.78581 19.3103 4.63423 18.3751 4.16894C16.5934 3.28247 14.393 2.75195 12.0001 2.75195C9.60725 2.75195 7.4068 3.28246 5.62511 4.16894C4.68994 4.63424 4.41204 4.78581 4.08702 5.31054C3.77136 5.8202 3.75011 6.28626 3.75011 7.75V11.2393C3.75024 16.4693 7.93215 19.4389 10.5167 20.7686C11.2464 21.144 11.4708 21.252 12.0001 21.252C12.5295 21.252 12.7538 21.144 13.4835 20.7686C16.0681 19.4389 20.25 16.4693 20.2501 11.2393V7.75ZM21.7501 11.2393C21.75 17.3759 16.8468 20.7254 14.17 22.1026C13.4326 22.482 12.9236 22.752 12.0001 22.752C11.0766 22.752 10.5676 22.482 9.83019 22.1026C7.15346 20.7254 2.25024 17.3759 2.25011 11.2393V7.75C2.25011 6.40259 2.22814 5.46254 2.81163 4.5205C3.38574 3.59361 4.03666 3.28415 4.95714 2.82617C6.96011 1.82959 9.39116 1.25195 12.0001 1.25195C14.6091 1.25195 17.0401 1.8296 19.0431 2.82617C19.9636 3.28415 20.6145 3.59361 21.1886 4.5205C21.7721 5.46254 21.7501 6.40259 21.7501 7.75V11.2393Z"
-                            fill="currentColor"
-                        />
+            <p class="mt-4 max-w-xl text-lg leading-relaxed text-white/90 lg:text-xl">منصة رقمية تمكنك من حجز قاعات أفراح حكومية مجهزة بالكامل، مع تحقق فوري من الأهلية عبر نفاذ لدعم استقرارك الأسري.</p>
+            <div class="mt-7 flex items-center gap-4">
+                <button class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary hover:bg-secondary/90 inline-flex h-14 shrink-0 items-center justify-center gap-2 rounded-md px-8 text-lg font-bold whitespace-nowrap text-white shadow-xl transition-all duration-300 outline-none hover:-translate-y-1 hover:shadow-2xl focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4">
+                    تحقق من استحقاقك الآن
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left mr-2 h-5 w-5" data-loc="client/src/pages/Home.tsx:42">
+                        <path d="m12 19-7-7 7-7"></path>
+                        <path d="M19 12H5"></path>
                     </svg>
-                </span>
-                <p class="mt-4 text-lg font-medium">التحقق من الأهلية</p>
-                <p class="mt-2 text-xs text-gray-500">أدخل رقم الهوية و عقد النكاح</p>
-            </div>
-            <div class="text-center">
-                <span class="icon-container">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" color="currentColor" fill="none">
-                        <defs />
-                        <path
-                            fill="currentColor"
-                            d="M12,1.25 C17.275,1.25 21.75,5.61 21.75,10.926 C21.75,13.639 20.6,15.921 18.987,17.804 C17.379,19.68 15.285,21.193 13.318,22.396 L13.307,22.403 L13.296,22.41 C12.9,22.633 12.454,22.75 12,22.75 C11.546,22.75 11.1,22.633 10.704,22.41 L10.691,22.402 L10.678,22.394 C8.718,21.181 6.625,19.673 5.017,17.802 C3.402,15.924 2.25,13.648 2.25,10.926 C2.25,5.61 6.725,1.25 12,1.25 Z M3.75,10.926 C3.75,13.191 4.7,15.133 6.154,16.825 C7.612,18.52 9.549,19.93 11.453,21.11 C11.62,21.202 11.808,21.25 12,21.25 C12.192,21.25 12.381,21.201 12.548,21.109 C14.453,19.942 16.391,18.528 17.848,16.828 C19.301,15.131 20.25,13.183 20.25,10.926 C20.25,6.456 16.466,2.75 12,2.75 C7.534,2.75 3.75,6.456 3.75,10.926 Z M12,6.75 C14.347,6.75 16.25,8.653 16.25,11 C16.25,13.347 14.347,15.25 12,15.25 C9.653,15.25 7.75,13.347 7.75,11 C7.75,8.653 9.653,6.75 12,6.75 Z M9.25,11 C9.25,12.519 10.481,13.75 12,13.75 C13.519,13.75 14.75,12.519 14.75,11 C14.75,9.481 13.519,8.25 12,8.25 C10.481,8.25 9.25,9.481 9.25,11 Z"
-                        />
-                    </svg>
-                </span>
-                <p class="mt-4 text-lg font-medium">اختر المدينة</p>
-                <p class="mt-2 text-xs text-gray-500">حدد المدينة المناسبة لك</p>
-            </div>
-            <div class="text-center">
-                <span class="icon-container">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" color="currentColor" fill="none">
-                        <defs />
-                        <path fill="currentColor" d="M12,1.25 C17.937,1.25 22.75,6.063 22.75,12 C22.75,17.937 17.937,22.75 12,22.75 C6.063,22.75 1.25,17.937 1.25,12 C1.25,6.063 6.063,1.25 12,1.25 Z M2.75,12 C2.75,17.109 6.891,21.25 12,21.25 C17.109,21.25 21.25,17.109 21.25,12 C21.25,6.891 17.109,2.75 12,2.75 C6.891,2.75 2.75,6.891 2.75,12 Z M12.75,8 L12.75,11.689 L14.53,13.47 C14.823,13.763 14.823,14.237 14.53,14.53 C14.237,14.823 13.763,14.823 13.47,14.53 L11.47,12.53 C11.329,12.39 11.25,12.199 11.25,12 L11.25,8 C11.25,7.586 11.586,7.25 12,7.25 C12.414,7.25 12.75,7.586 12.75,8 Z" />
-                    </svg>
-                </span>
-                <p class="mt-4 text-lg font-medium">احصل على موعدك</p>
-                <p class="mt-2 text-xs text-gray-500">النظام يحدد أقرب موعد متاح</p>
-            </div>
-            <div class="text-center">
-                <span class="icon-container">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" color="currentColor" fill="none">
-                        <defs />
-                        <path
-                            fill="currentColor"
-                            d="M1.25,12 C1.25,6.072 6.072,1.25 12,1.25 C13.89,1.25 15.748,1.748 17.376,2.689 C17.735,2.896 17.857,3.355 17.65,3.714 C17.443,4.073 16.984,4.195 16.625,3.988 C15.226,3.179 13.627,2.751 12.001,2.751 C6.901,2.751 2.751,6.901 2.751,12.001 C2.751,17.101 6.901,21.251 12.001,21.251 C17.101,21.251 21.251,17.101 21.251,12.001 C21.251,11.378 21.189,10.755 21.066,10.15 C20.984,9.744 21.246,9.348 21.652,9.266 C22.058,9.184 22.454,9.446 22.536,9.852 C22.679,10.555 22.751,11.278 22.751,12.001 C22.751,17.929 17.929,22.751 12.001,22.751 L12,22.75 C6.072,22.75 1.25,17.928 1.25,12 Z M10.794,16.362 C9.138,13.425 8.209,13.239 8.209,13.262 C8.209,13.262 7.375,13.243 7.48,12.403 C7.561,11.75 8.209,11.75 8.209,11.75 C8.493,11.75 9.873,11.899 11.643,14.547 C13.163,12.004 17.664,5.834 21.752,4.297 C22.135,4.153 22.562,4.351 22.704,4.739 C22.846,5.127 22.65,5.559 22.267,5.703 C20.411,6.401 17.97,8.514 15.472,11.689 C13.663,14.142 12.323,16.339 12.311,16.362 C12.182,16.599 11.936,16.747 11.669,16.749 L11.664,16.749 L11.663,16.75 C11.397,16.75 11.012,16.749 10.794,16.362 Z"
-                        />
-                    </svg>
-                </span>
-                <p class="mt-4 text-lg font-medium">تأكيد الحجز</p>
-                <p class="mt-2 text-xs text-gray-500">استلم تأكيد الحجز فورًا</p>
+                </button>
+                <button class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:border-input dark:hover:bg-input/50 inline-flex h-14 shrink-0 items-center justify-center gap-2 rounded-md border border-white/30 bg-white/5 px-8 text-lg font-medium whitespace-nowrap text-white shadow-xs backdrop-blur-sm transition-all outline-none hover:bg-white/20 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-4 dark:bg-transparent [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4">تعرف على المزيد</button>
             </div>
         </div>
     </section>
 
-    <section class="container space-y-12 py-20">
-        <div class="space-y-4 text-center">
-            <h1 class="text-4xl font-medium">
-                خدمة متكاملة
-                <span class="text-green-700">و موثوقة</span>
-            </h1>
+    <section class="container space-y-16 py-24">
+        <div class="mx-auto max-w-3xl space-y-4 text-center">
+            <h1 class="text-primary text-4xl font-bold">لماذا منصة {{ config('app.name') }}؟</h1>
+            <p class="text-muted-foreground text-xl">صممنا المنصة لتكون رحلة سهلة وميسرة تبدأ من التحقق وتنتهي بليلة العمر، مع مراعاة أعلى معايير الخصوصية والكرامة.</p>
         </div>
-        <div class="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
-            <div class="card shadow-sm!">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div class="text-card-foreground group relative flex flex-col gap-6 overflow-hidden rounded-xl border border-none bg-white py-6 shadow-md transition-all duration-300 hover:shadow-xl">
                 <div class="card-content">
-                    <span class="icon-container bg-green-700/10 shadow-none">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" color="currentColor" fill="none">
-                            <path
-                                d="M20.2501 7.75C20.2501 6.28626 20.2289 5.8202 19.9132 5.31054C19.5882 4.78581 19.3103 4.63423 18.3751 4.16894C16.5934 3.28247 14.393 2.75195 12.0001 2.75195C9.60725 2.75195 7.4068 3.28246 5.62511 4.16894C4.68994 4.63424 4.41204 4.78581 4.08702 5.31054C3.77136 5.8202 3.75011 6.28626 3.75011 7.75V11.2393C3.75024 16.4693 7.93215 19.4389 10.5167 20.7686C11.2464 21.144 11.4708 21.252 12.0001 21.252C12.5295 21.252 12.7538 21.144 13.4835 20.7686C16.0681 19.4389 20.25 16.4693 20.2501 11.2393V7.75ZM21.7501 11.2393C21.75 17.3759 16.8468 20.7254 14.17 22.1026C13.4326 22.482 12.9236 22.752 12.0001 22.752C11.0766 22.752 10.5676 22.482 9.83019 22.1026C7.15346 20.7254 2.25024 17.3759 2.25011 11.2393V7.75C2.25011 6.40259 2.22814 5.46254 2.81163 4.5205C3.38574 3.59361 4.03666 3.28415 4.95714 2.82617C6.96011 1.82959 9.39116 1.25195 12.0001 1.25195C14.6091 1.25195 17.0401 1.8296 19.0431 2.82617C19.9636 3.28415 20.6145 3.59361 21.1886 4.5205C21.7721 5.46254 21.7501 6.40259 21.7501 7.75V11.2393Z"
-                                fill="currentColor"
-                            />
+                    <span class="bg-primary/5 absolute top-0 right-0 -mt-10 -mr-10 h-32 w-32 rounded-bl-full transition-transform duration-500 group-hover:scale-150"></span>
+                    <span class="bg-primary/10 text-primary group-hover:bg-primary mb-6 flex h-16 w-16 items-center justify-center rounded-2xl transition-colors duration-300 group-hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check h-8 w-8" data-loc="client/src/pages/Home.tsx:149">
+                            <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                            <path d="m9 12 2 2 4-4"></path>
                         </svg>
                     </span>
-                    <p class="card-title mt-4">تحقق حكومي آمن</p>
-                    <p class="card-text mt-2">ربط مباشر مع أبشر و ناجز</p>
+                    <div class="space-y-3">
+                        <p class="text-foreground text-2xl font-bold">تحقق فوري وموثوق</p>
+                        <p class="text-muted-foreground leading-relaxed">ربط مباشر مع نفاذ والضمان الاجتماعي للتحقق من الأهلية في ثوانٍ معدودة دون الحاجة لرفع مستندات ورقية.</p>
+                    </div>
                 </div>
             </div>
-            <div class="card shadow-sm!">
+            <div class="text-card-foreground group relative flex flex-col gap-6 overflow-hidden rounded-xl border border-none bg-white py-6 shadow-md transition-all duration-300 hover:shadow-xl">
                 <div class="card-content">
-                    <span class="icon-container bg-green-700/10 shadow-none">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" color="currentColor" fill="none">
-                            <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M16 6.75C15.59 6.75 15.25 6.41 15.25 6V4.76273C14.5917 4.75 13.8461 4.75 13.0005 4.75H13H11H10.9995C10.1539 4.75 9.40827 4.75 8.75 4.76273V6C8.75 6.41 8.41 6.75 8 6.75C7.59 6.75 7.25 6.41 7.25 6V4.83087C6.02761 4.93384 5.23207 5.16789 4.70001 5.69995C4.03486 6.3651 3.83542 7.44206 3.77561 9.25H20.2244C20.1646 7.44206 19.9651 6.3651 19.3 5.69995C18.7679 5.16789 17.9724 4.93384 16.75 4.83087V6C16.75 6.41 16.41 6.75 16 6.75ZM21.7395 9.87591C21.6964 7.26193 21.4772 5.75719 20.36 4.64001C19.4987 3.77873 18.4032 3.45112 16.75 3.3265V2C16.75 1.59 16.41 1.25 16 1.25C15.59 1.25 15.25 1.59 15.25 2V3.26282C14.5783 3.25 13.8324 3.25 13 3.25H11C10.1671 3.25 9.42134 3.25 8.75 3.26274V2C8.75 1.59 8.41 1.25 8 1.25C7.59 1.25 7.25 1.59 7.25 2V3.32617C5.59486 3.45054 4.50206 3.77797 3.64001 4.64001C2.52284 5.75719 2.30356 7.26193 2.26051 9.87591C2.2536 9.91634 2.25 9.9578 2.25 10C2.25 10.0349 2.25247 10.0693 2.25723 10.1031C2.25 10.6805 2.25 11.3104 2.25 12V14C2.25 17.98 2.25001 19.97 3.64001 21.36C5.03001 22.75 7.03 22.75 11 22.75H13C16.98 22.75 18.97 22.75 20.36 21.36C21.75 19.97 21.75 17.98 21.75 14V12C21.75 11.3104 21.75 10.6805 21.7428 10.1031C21.7475 10.0693 21.75 10.0349 21.75 10C21.75 9.9578 21.7464 9.91634 21.7395 9.87591ZM20.2482 10.75H3.75184C3.75 11.1404 3.75 11.5565 3.75 12V14C3.75 17.56 3.75001 19.35 4.70001 20.3C5.64996 21.25 7.43981 21.25 10.9994 21.25H11H13H13.0006C16.5602 21.25 18.35 21.25 19.3 20.3C20.25 19.35 20.25 17.56 20.25 14V12C20.25 11.5565 20.25 11.1404 20.2482 10.75Z"
-                                fill="currentColor"
-                            />
+                    <span class="bg-primary/5 absolute top-0 right-0 -mt-10 -mr-10 h-32 w-32 rounded-bl-full transition-transform duration-500 group-hover:scale-150"></span>
+                    <span class="bg-primary/10 text-primary group-hover:bg-primary mb-6 flex h-16 w-16 items-center justify-center rounded-2xl transition-colors duration-300 group-hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building2 h-8 w-8" data-loc="client/src/pages/Home.tsx:149">
+                            <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                            <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                            <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                            <path d="M10 6h4"></path>
+                            <path d="M10 10h4"></path>
+                            <path d="M10 14h4"></path>
+                            <path d="M10 18h4"></path>
                         </svg>
                     </span>
-                    <p class="card-title mt-4">حجز فوري</p>
-                    <p class="card-text mt-2">احجز موعدك في دقائق</p>
+                    <div class="space-y-3">
+                        <p class="text-foreground text-2xl font-bold">قاعات حكومية مجهزة</p>
+                        <p class="text-muted-foreground leading-relaxed">قاعات حديثة ومجهزة بالكامل في مختلف مناطق المملكة، تضمن لك ولضيوفك تجربة مميزة تليق بمناسبتكم.</p>
+                    </div>
                 </div>
             </div>
-            <div class="card shadow-sm!">
+            <div class="text-card-foreground group relative flex flex-col gap-6 overflow-hidden rounded-xl border border-none bg-white py-6 shadow-md transition-all duration-300 hover:shadow-xl">
                 <div class="card-content">
-                    <span class="icon-container bg-green-700/10 shadow-none">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" color="currentColor" fill="none">
-                            <defs />
-                            <path
-                                fill="currentColor"
-                                d="M12,1.25 C17.275,1.25 21.75,5.61 21.75,10.926 C21.75,13.639 20.6,15.921 18.987,17.804 C17.379,19.68 15.285,21.193 13.318,22.396 L13.307,22.403 L13.296,22.41 C12.9,22.633 12.454,22.75 12,22.75 C11.546,22.75 11.1,22.633 10.704,22.41 L10.691,22.402 L10.678,22.394 C8.718,21.181 6.625,19.673 5.017,17.802 C3.402,15.924 2.25,13.648 2.25,10.926 C2.25,5.61 6.725,1.25 12,1.25 Z M3.75,10.926 C3.75,13.191 4.7,15.133 6.154,16.825 C7.612,18.52 9.549,19.93 11.453,21.11 C11.62,21.202 11.808,21.25 12,21.25 C12.192,21.25 12.381,21.201 12.548,21.109 C14.453,19.942 16.391,18.528 17.848,16.828 C19.301,15.131 20.25,13.183 20.25,10.926 C20.25,6.456 16.466,2.75 12,2.75 C7.534,2.75 3.75,6.456 3.75,10.926 Z M12,6.75 C14.347,6.75 16.25,8.653 16.25,11 C16.25,13.347 14.347,15.25 12,15.25 C9.653,15.25 7.75,13.347 7.75,11 C7.75,8.653 9.653,6.75 12,6.75 Z M9.25,11 C9.25,12.519 10.481,13.75 12,13.75 C13.519,13.75 14.75,12.519 14.75,11 C14.75,9.481 13.519,8.25 12,8.25 C10.481,8.25 9.25,9.481 9.25,11 Z"
-                            />
+                    <span class="bg-primary/5 absolute top-0 right-0 -mt-10 -mr-10 h-32 w-32 rounded-bl-full transition-transform duration-500 group-hover:scale-150"></span>
+                    <span class="bg-primary/10 text-primary group-hover:bg-primary mb-6 flex h-16 w-16 items-center justify-center rounded-2xl transition-colors duration-300 group-hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-handshake h-8 w-8" data-loc="client/src/pages/Home.tsx:149">
+                            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                            <path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"></path>
+                            <path d="m18 15-2-2"></path>
+                            <path d="m15 18-2-2"></path>
                         </svg>
                     </span>
-                    <p class="card-title mt-4">10 مدن</p>
-                    <p class="card-text mt-2">تغطية شاملة بالمملكة</p>
+                    <div class="space-y-3">
+                        <p class="text-foreground text-2xl font-bold">دعم الاستقرار الأسري</p>
+                        <p class="text-muted-foreground leading-relaxed">نساهم في تخفيف الأعباء المالية لبداية حياة زوجية مستقرة وكريمة، مع حفظ كامل لخصوصية المستفيد.</p>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container space-y-16 py-24">
+        <div class="mx-auto max-w-3xl space-y-4 text-center">
+            <h1 class="text-primary text-4xl font-bold">رحلة المستفيد في خطوات بسيطة</h1>
+        </div>
+        <div class="grid grid-cols-1 gap-8 text-right md:grid-cols-2">
+            <div class="mx-auto flex gap-6">
+                <span class="border-secondary text-secondary flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 text-xl font-bold">01</span>
+                <div class="text-foreground mb-2 text-xl font-bold">
+                    <p class="text-foreground mb-2 text-xl font-bold">تسجيل الدخول</p>
+                    <p class="text-muted-foreground">سجل دخولك بسهولة باستخدام رقم الهوية ورقم عقد النكاح.</p>
+                </div>
+            </div>
+            <div class="mx-auto flex gap-6">
+                <span class="border-secondary text-secondary flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 text-xl font-bold">02</span>
+                <div class="text-foreground mb-2 text-xl font-bold">
+                    <p class="text-foreground mb-2 text-xl font-bold">تسجيل الدخول</p>
+                    <p class="text-muted-foreground">سجل دخولك بسهولة باستخدام رقم الهوية ورقم عقد النكاح.</p>
+                </div>
+            </div>
+            <div class="mx-auto flex gap-6">
+                <span class="border-secondary text-secondary flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 text-xl font-bold">03</span>
+                <div class="text-foreground mb-2 text-xl font-bold">
+                    <p class="text-foreground mb-2 text-xl font-bold">تسجيل الدخول</p>
+                    <p class="text-muted-foreground">سجل دخولك بسهولة باستخدام رقم الهوية ورقم عقد النكاح.</p>
+                </div>
+            </div>
+            <div class="mx-auto flex gap-6">
+                <span class="border-secondary text-secondary flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 text-xl font-bold">04</span>
+                <div class="text-foreground mb-2 text-xl font-bold">
+                    <p class="text-foreground mb-2 text-xl font-bold">تسجيل الدخول</p>
+                    <p class="text-muted-foreground">سجل دخولك بسهولة باستخدام رقم الهوية ورقم عقد النكاح.</p>
+                </div>
+            </div>
+            <div class="col-span-full mt-12 text-center">
+                <button class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-primary/90 bg-primary inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-md px-8 text-sm font-bold whitespace-nowrap text-white shadow-lg transition-all outline-none hover:-translate-y-1 hover:shadow-xl focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4">ابدأ رحلتك الآن</button>
             </div>
         </div>
     </section>
